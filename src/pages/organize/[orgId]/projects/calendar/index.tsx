@@ -2,9 +2,9 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 
-import AllCampaignsLayout from 'features/campaigns/layout/AllCampaignsLayout';
+import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
 import Calendar from 'features/calendar/components';
-import getCampaigns from 'features/campaigns/fetching/getCampaigns';
+import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getEvents from 'features/events/fetching/getEvents';
 import getOrg from 'utils/fetching/getOrg';
 import { PageWithLayout } from 'utils/types';
@@ -13,7 +13,7 @@ import { tasksResource } from 'features/tasks/api/tasks';
 import { useMessages } from 'core/i18n';
 import ZUISpeedDial, { ACTIONS } from 'zui/ZUISpeedDial';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

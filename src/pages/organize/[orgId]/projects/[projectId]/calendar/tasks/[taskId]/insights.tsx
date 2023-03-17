@@ -17,7 +17,7 @@ import {
 } from 'features/tasks/components/types';
 import { Msg, useMessages } from 'core/i18n';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

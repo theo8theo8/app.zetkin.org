@@ -20,7 +20,7 @@ import ZUIQuery from 'zui/ZUIQuery';
 import getTaskStatus, { TASK_STATUS } from 'features/tasks/utils/getTaskStatus';
 import { ZetkinAssignedTask, ZetkinTask } from 'utils/types/zetkin';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

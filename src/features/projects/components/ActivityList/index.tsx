@@ -6,7 +6,7 @@ import TaskListItem from './TaskListItem';
 import {
   ACTIVITIES,
   CampaignAcitivity,
-} from 'features/campaigns/models/CampaignAcitivitiesModel';
+} from 'features/projects/models/CampaignAcitivitiesModel';
 
 interface ActivityListProps {
   activities: CampaignAcitivity[];

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import DisplayTimeFrame from '../DisplayTimeFrame';
 import getActivity from 'features/smartSearch/fetching/getActivity';
-import getCampaign from 'features/campaigns/fetching/getCampaign';
+import getCampaign from 'features/projects/fetching/getCampaign';
 import getLocation from 'features/smartSearch/fetching/getLocation';
 import { getTimeFrameWithConfig } from '../../utils';
 import { Msg } from 'core/i18n';

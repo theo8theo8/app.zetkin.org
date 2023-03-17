@@ -3,10 +3,10 @@ import { InfoOutlined } from '@mui/icons-material';
 import NextLink from 'next/link';
 import { Box, Link, Typography } from '@mui/material';
 
-import ActivityList from 'features/campaigns/components/ActivityList';
-import AllCampaignsLayout from 'features/campaigns/layout/AllCampaignsLayout';
-import CampaignActivitiesModel from 'features/campaigns/models/CampaignAcitivitiesModel';
-import messageIds from 'features/campaigns/l10n/messageIds';
+import ActivityList from 'features/projects/components/ActivityList';
+import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
+import CampaignActivitiesModel from 'features/projects/models/CampaignAcitivitiesModel';
+import messageIds from 'features/projects/l10n/messageIds';
 import { Msg } from 'core/i18n';
 import { PageWithLayout } from 'utils/types';
 import { scaffold } from 'utils/next';

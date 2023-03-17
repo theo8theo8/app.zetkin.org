@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { campaignResource } from 'features/campaigns/api/campaigns';
+import { campaignResource } from 'features/projects/api/campaigns';
 import DisplayTimeFrame from '../DisplayTimeFrame';
 import { Msg } from 'core/i18n';
 import { taskResource } from 'features/tasks/api/tasks';

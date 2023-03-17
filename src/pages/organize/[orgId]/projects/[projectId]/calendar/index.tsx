@@ -2,19 +2,19 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import Calendar from 'features/calendar/components';
-import getCampaign from 'features/campaigns/fetching/getCampaign';
-import getCampaignEvents from 'features/campaigns/fetching/getCampaignEvents';
+import getCampaign from 'features/projects/fetching/getCampaign';
+import getCampaignEvents from 'features/projects/fetching/getCampaignEvents';
 import getOrg from 'utils/fetching/getOrg';
 import { PageWithLayout } from 'utils/types';
 import { scaffold } from 'utils/next';
-import SingleCampaignLayout from 'features/campaigns/layout/SingleCampaignLayout';
+import SingleCampaignLayout from 'features/projects/layout/SingleCampaignLayout';
 import { useQuery } from 'react-query';
 import ZUISpeedDial, { ACTIONS } from 'zui/ZUISpeedDial';
 
 import { campaignTasksResource } from 'features/tasks/api/tasks';
 import { useMessages } from 'core/i18n';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

@@ -3,9 +3,9 @@ import { FunctionComponent } from 'react';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 
-import CampaignActionButtons from 'features/campaigns/components/CampaignActionButtons';
+import CampaignActionButtons from 'features/projects/components/CampaignActionButtons';
 import EditableCampaignTitle from '../components/EditableCampaignTitle';
-import getCampaign from 'features/campaigns/fetching/getCampaign';
+import getCampaign from 'features/projects/fetching/getCampaign';
 import getCampaignEvents from '../fetching/getCampaignEvents';
 import TabbedLayout from '../../../utils/layout/TabbedLayout';
 import { getFirstAndLastEvent, removeOffset } from 'utils/dateUtils';

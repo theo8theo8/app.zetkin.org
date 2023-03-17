@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import validator from 'validator';
 import { DateTimePicker, TextField } from 'mui-rff';
 
-import getCampaigns from 'features/campaigns/fetching/getCampaigns';
+import getCampaigns from 'features/projects/fetching/getCampaigns';
 import { ZetkinTask } from 'utils/types/zetkin';
 import {
   AnyTaskTypeConfig,

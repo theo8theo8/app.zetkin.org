@@ -3,7 +3,7 @@ import { MenuItem } from '@mui/material';
 
 import FilterForm from '../../FilterForm';
 import getActivities from 'utils/fetching/getActivities';
-import getCampaigns from 'features/campaigns/fetching/getCampaigns';
+import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getLocations from 'utils/fetching/getLocations';
 import { Msg } from 'core/i18n';
 import StyledSelect from '../../inputs/StyledSelect';

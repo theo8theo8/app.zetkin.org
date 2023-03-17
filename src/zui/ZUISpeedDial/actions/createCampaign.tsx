@@ -3,8 +3,8 @@ import { Flag } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import { useMutation, useQueryClient } from 'react-query';
 
-import CampaignDetailsForm from 'features/campaigns/components/CampaignDetailsForm';
-import postCampaign from 'features/campaigns/fetching/postCampaign';
+import CampaignDetailsForm from 'features/projects/components/CampaignDetailsForm';
+import postCampaign from 'features/projects/fetching/postCampaign';
 
 import { ACTIONS } from '../constants';
 import { Msg } from 'core/i18n';

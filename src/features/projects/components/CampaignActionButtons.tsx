@@ -6,9 +6,9 @@ import { Delete, Settings } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 
-import CampaignDetailsForm from 'features/campaigns/components/CampaignDetailsForm';
-import deleteCampaign from 'features/campaigns/fetching/deleteCampaign';
-import patchCampaign from 'features/campaigns/fetching/patchCampaign';
+import CampaignDetailsForm from 'features/projects/components/CampaignDetailsForm';
+import deleteCampaign from 'features/projects/fetching/deleteCampaign';
+import patchCampaign from 'features/projects/fetching/patchCampaign';
 import { ZetkinCampaign } from 'utils/types/zetkin';
 import { ZUIConfirmDialogContext } from 'zui/ZUIConfirmDialogProvider';
 import ZUIDialog from 'zui/ZUIDialog';

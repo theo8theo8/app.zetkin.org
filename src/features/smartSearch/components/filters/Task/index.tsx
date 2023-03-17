@@ -2,7 +2,7 @@ import { FormEvent } from 'react';
 import { MenuItem } from '@mui/material';
 import { useRouter } from 'next/router';
 
-import { campaignsResource } from 'features/campaigns/api/campaigns';
+import { campaignsResource } from 'features/projects/api/campaigns';
 import { tasksResource } from 'features/tasks/api/tasks';
 
 import FilterForm from '../../FilterForm';

@@ -4,9 +4,9 @@ import { Box } from '@mui/material';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 
-import AllCampaignsLayout from 'features/campaigns/layout/AllCampaignsLayout';
-import CampaignCard from 'features/campaigns/components/CampaignCard';
-import getCampaigns from 'features/campaigns/fetching/getCampaigns';
+import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
+import CampaignCard from 'features/projects/components/CampaignCard';
+import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getEvents from 'features/events/fetching/getEvents';
 import getOrg from 'utils/fetching/getOrg';
 import getUpcomingEvents from 'features/events/fetching/getUpcomingEvents';
@@ -15,7 +15,7 @@ import { scaffold } from 'utils/next';
 import { useMessages } from 'core/i18n';
 import ZUISection from 'zui/ZUISection';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

@@ -5,12 +5,12 @@ import { Box, Grid, Typography } from '@mui/material';
 
 import { campaignTasksResource } from 'features/tasks/api/tasks';
 import EventList from 'features/events/components/EventList';
-import getCampaign from 'features/campaigns/fetching/getCampaign';
-import getCampaignEvents from 'features/campaigns/fetching/getCampaignEvents';
+import getCampaign from 'features/projects/fetching/getCampaign';
+import getCampaignEvents from 'features/projects/fetching/getCampaignEvents';
 import getOrg from 'utils/fetching/getOrg';
 import { PageWithLayout } from 'utils/types';
 import { scaffold } from 'utils/next';
-import SingleCampaignLayout from 'features/campaigns/layout/SingleCampaignLayout';
+import SingleCampaignLayout from 'features/projects/layout/SingleCampaignLayout';
 import TaskList from 'features/tasks/components/TaskList';
 import { useMessages } from 'core/i18n';
 import ZUIPerson from 'zui/ZUIPerson';
@@ -18,7 +18,7 @@ import ZUIPersonHoverCard from 'zui/ZUIPersonHoverCard';
 import ZUISection from 'zui/ZUISection';
 import ZUISpeedDial, { ACTIONS } from 'zui/ZUISpeedDial';
 
-import messageIds from 'features/campaigns/l10n/messageIds';
+import messageIds from 'features/projects/l10n/messageIds';
 
 const scaffoldOptions = {
   authLevelRequired: 2,

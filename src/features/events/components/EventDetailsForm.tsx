@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Box, Button, Grid, GridSize, MenuItem } from '@mui/material';
 
 import getActivities from 'utils/fetching/getActivities';
-import getCampaigns from 'features/campaigns/fetching/getCampaigns';
+import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getLocations from 'utils/fetching/getLocations';
 import { Msg, useMessages } from 'core/i18n';
 
