@@ -1,18 +1,18 @@
 import { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
 
-import CampaignsActionButtons from '../components/CampaignsActionButtons';
+import ProjectsActionButtons from '../components/ProjectsActionButtons';
 import TabbedLayout from '../../../utils/layout/TabbedLayout';
 import { useMessages } from 'core/i18n';
 
 import messageIds from '../l10n/messageIds';
 
-interface AllCampaignsLayoutProps {
+interface AllProjectsLayoutProps {
   children: React.ReactNode;
   fixedHeight?: boolean;
 }
 
-const AllCampaignsLayout: FunctionComponent<AllCampaignsLayoutProps> = ({
+const AllProjectsLayout: FunctionComponent<AllProjectsLayoutProps> = ({
   children,
   fixedHeight,
 }) => {
@@ -21,8 +21,8 @@ const AllCampaignsLayout: FunctionComponent<AllCampaignsLayoutProps> = ({
 
   return (
     <TabbedLayout
-      actionButtons={<CampaignsActionButtons />}
-      baseHref={`/organize/${orgId}/campaigns`}
+      actionButtons={<ProjectsActionButtons />}
+      baseHref={`/organize/${orgId}/projects`}
       defaultTab="/"
       fixedHeight={fixedHeight}
       tabs={[
@@ -43,4 +43,4 @@ const AllCampaignsLayout: FunctionComponent<AllCampaignsLayoutProps> = ({
   );
 };
 
-export default AllCampaignsLayout;
+export default AllProjectsLayout;

@@ -3,8 +3,8 @@ import { Flag } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import { useMutation, useQueryClient } from 'react-query';
 
-import postCampaign from 'features/projects/fetching/postCampaign';
-import ProjectDetailsForm from 'features/projects/components/CampaignDetailsForm';
+import postProject from 'features/projects/fetching/postProject';
+import ProjectDetailsForm from 'features/projects/components/ProjectDetailsForm';
 
 import { ACTIONS } from '../constants';
 import { Msg } from 'core/i18n';
@@ -20,7 +20,7 @@ const DialogContent: React.FunctionComponent<DialogContentBaseProps> = ({
   const { orgId } = router.query as { orgId: string };
 
   const { mutateAsync: sendCampaignRequest, isError } = useMutation(
-    postCampaign(orgId)
+    postProject(orgId)
   );
 
   const handleFormSubmit = async (data: Record<string, unknown>) => {

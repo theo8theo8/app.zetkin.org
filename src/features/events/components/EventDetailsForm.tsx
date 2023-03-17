@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import { Box, Button, Grid, GridSize, MenuItem } from '@mui/material';
 
 import getActivities from 'utils/fetching/getActivities';
-import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getLocations from 'utils/fetching/getLocations';
+import getProjects from 'features/projects/fetching/getProjects';
 import { Msg, useMessages } from 'core/i18n';
 
 import messageIds from '../l10n/messageIds';
@@ -25,7 +25,7 @@ const EventDetailsForm = ({
 }: EventDetailsFormProps): JSX.Element => {
   const router = useRouter();
   const { campId } = router.query;
-  const campaignsQuery = useQuery(['campaigns', orgId], getCampaigns(orgId));
+  const campaignsQuery = useQuery(['campaigns', orgId], getProjects(orgId));
   const activitiesQuery = useQuery(['actvities', orgId], getActivities(orgId));
   const locationsQuery = useQuery(['locations', orgId], getLocations(orgId));
 

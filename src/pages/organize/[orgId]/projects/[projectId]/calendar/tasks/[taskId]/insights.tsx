@@ -44,7 +44,7 @@ export const getServerSideProps: GetServerSideProps = scaffold(async (ctx) => {
   const { state: taskState, data: taskData } = await prefetchTask(ctx);
 
   if (orgState?.status === 'success' && taskState?.status === 'success') {
-    if (campId && +campId === taskData?.campaign.id) {
+    if (campId && +campId === taskData?.project.id) {
       return {
         props: {
           campId,

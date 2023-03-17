@@ -3,13 +3,13 @@ import { ZetkinProject } from 'utils/types/zetkin';
 
 export default function patchProject(
   orgId: string | number,
-  campId: string | number,
+  projectId: string | number,
   fetch = defaultFetch
 ) {
-  return async (campaign: Record<string, unknown>): Promise<ZetkinProject> => {
-    const url = `/orgs/${orgId}/campaigns/${campId}`;
+  return async (project: Record<string, unknown>): Promise<ZetkinProject> => {
+    const url = `/orgs/${orgId}/projects/${projectId}`;
     const res = await fetch(url, {
-      body: JSON.stringify(campaign),
+      body: JSON.stringify(project),
       headers: {
         'Content-Type': 'application/json',
       },

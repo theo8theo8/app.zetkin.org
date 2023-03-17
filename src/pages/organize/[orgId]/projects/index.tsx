@@ -4,13 +4,13 @@ import { Box } from '@mui/material';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 
-import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
-import getCampaigns from 'features/projects/fetching/getCampaigns';
+import AllProjectsLayout from 'features/projects/layout/AllCampaignsLayout';
 import getEvents from 'features/events/fetching/getEvents';
 import getOrg from 'utils/fetching/getOrg';
+import getProjects from 'features/projects/fetching/getProjects';
 import getUpcomingEvents from 'features/events/fetching/getUpcomingEvents';
 import { PageWithLayout } from 'utils/types';
-import ProjectCard from 'features/projects/components/CampaignCard';
+import ProjectCard from 'features/projects/components/ProjectCard';
 import { scaffold } from 'utils/next';
 import { useMessages } from 'core/i18n';
 import ZUISection from 'zui/ZUISection';
@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = scaffold(async (ctx) => {
 
   await ctx.queryClient.prefetchQuery(
     ['campaigns', orgId],
-    getCampaigns(orgId as string, ctx.apiFetch)
+    getProjects(orgId as string, ctx.apiFetch)
   );
   const campaignsState = ctx.queryClient.getQueryState(['campaigns', orgId]);
 
@@ -84,7 +84,7 @@ const AllCampaignsSummaryPage: PageWithLayout<AllCampaignsSummaryPageProps> = ({
   orgId,
 }) => {
   const messages = useMessages(messageIds);
-  const campaignsQuery = useQuery(['campaigns', orgId], getCampaigns(orgId));
+  const campaignsQuery = useQuery(['campaigns', orgId], getProjects(orgId));
   const eventsQuery = useQuery(['events', orgId], getEvents(orgId));
 
   const campaigns = campaignsQuery.data || [];
@@ -117,7 +117,7 @@ const AllCampaignsSummaryPage: PageWithLayout<AllCampaignsSummaryPageProps> = ({
 };
 
 AllCampaignsSummaryPage.getLayout = function getLayout(page) {
-  return <AllCampaignsLayout>{page}</AllCampaignsLayout>;
+  return <AllProjectsLayout>{page}</AllProjectsLayout>;
 };
 
 export default AllCampaignsSummaryPage;

@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 
 import DisplayTimeFrame from '../DisplayTimeFrame';
 import getActivity from 'features/smartSearch/fetching/getActivity';
-import getCampaign from 'features/projects/fetching/getCampaign';
 import getLocation from 'features/smartSearch/fetching/getLocation';
+import getProject from 'features/projects/fetching/getProject';
 import { getTimeFrameWithConfig } from '../../utils';
 import { Msg } from 'core/i18n';
 import {
@@ -40,7 +40,7 @@ const DisplayCampaignParticipation = ({
 
   const campaignQuery = useQuery(
     ['campaign', orgId, campId],
-    getCampaign(orgId as string, campId?.toString() as string),
+    getProject(orgId as string, campId?.toString() as string),
     { enabled: !!campId }
   );
   const activityQuery = useQuery(

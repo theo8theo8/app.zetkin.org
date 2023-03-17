@@ -2,11 +2,11 @@ import defaultFetch from '../../../utils/fetching/defaultFetch';
 
 const deleteProject = (
   orgId: string | number,
-  campaignId: string | number,
+  projectId: string | number,
   fetch = defaultFetch
 ) => {
   return async (): Promise<void> => {
-    const url = `/orgs/${orgId}/campaigns/${campaignId}`;
+    const url = `/orgs/${orgId}/projects/${projectId}`;
     const res = await fetch(url, {
       method: 'DELETE',
     });

@@ -2,11 +2,11 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 
-import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
+import AllProjectsLayout from 'features/projects/layout/AllCampaignsLayout';
 import Calendar from 'features/calendar/components';
-import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getEvents from 'features/events/fetching/getEvents';
 import getOrg from 'utils/fetching/getOrg';
+import getProjects from 'features/projects/fetching/getProjects';
 import { PageWithLayout } from 'utils/types';
 import { scaffold } from 'utils/next';
 import { tasksResource } from 'features/tasks/api/tasks';
@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = scaffold(async (ctx) => {
 
   await ctx.queryClient.prefetchQuery(
     ['campaigns', orgId],
-    getCampaigns(orgId as string, ctx.apiFetch)
+    getProjects(orgId as string, ctx.apiFetch)
   );
   const campaignsState = ctx.queryClient.getQueryState(['campaigns', orgId]);
 
@@ -77,7 +77,7 @@ const AllCampaignsCalendarPage: PageWithLayout<
 > = ({ orgId }) => {
   const messages = useMessages(messageIds);
   const eventsQuery = useQuery(['events', orgId], getEvents(orgId));
-  const campaignsQuery = useQuery(['campaigns', orgId], getCampaigns(orgId));
+  const campaignsQuery = useQuery(['campaigns', orgId], getProjects(orgId));
   const tasksQuery = tasksResource(orgId).useQuery();
   const events = eventsQuery.data || [];
   const tasks = tasksQuery.data || [];
@@ -100,7 +100,7 @@ const AllCampaignsCalendarPage: PageWithLayout<
 };
 
 AllCampaignsCalendarPage.getLayout = function getLayout(page) {
-  return <AllCampaignsLayout fixedHeight>{page}</AllCampaignsLayout>;
+  return <AllProjectsLayout fixedHeight>{page}</AllProjectsLayout>;
 };
 
 export default AllCampaignsCalendarPage;

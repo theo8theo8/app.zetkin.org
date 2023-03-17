@@ -3,8 +3,8 @@ import { MenuItem } from '@mui/material';
 
 import FilterForm from '../../FilterForm';
 import getActivities from 'utils/fetching/getActivities';
-import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getLocations from 'utils/fetching/getLocations';
+import getProjects from 'features/projects/fetching/getProjects';
 import { Msg } from 'core/i18n';
 import StyledSelect from '../../inputs/StyledSelect';
 import TimeFrame from '../TimeFrame';
@@ -64,7 +64,7 @@ const CampaignParticipation = ({
   const { orgId } = useRouter().query;
   const campQuery = useQuery(
     ['campaigns', orgId],
-    getCampaigns(orgId as string)
+    getProjects(orgId as string)
   );
   const activitiesQuery = useQuery(
     ['activities', orgId],

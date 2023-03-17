@@ -52,12 +52,12 @@ describe('SurveyDataModel', () => {
             expires: expires,
             id: 1,
             info_text: 'Semla',
-            project: null,
             org_access: 'sameorg',
             organization: {
               id: 1,
               title: 'Semla lovers',
             },
+            project: null,
             published: published,
             title: 'Semla lovers assemble',
           },

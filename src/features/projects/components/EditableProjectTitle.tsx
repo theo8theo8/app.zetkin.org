@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { FC, useContext } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 
-import patchProject from '../fetching/patchCampaign';
+import patchProject from '../fetching/patchProject';
 import { useMessages } from 'core/i18n';
 import { ZetkinProject } from 'utils/types/zetkin';
 import ZUIEditTextinPlace from 'zui/ZUIEditTextInPlace';
@@ -22,12 +22,12 @@ const EditableProjectTitle: FC<EditableProjectTitleProps> = ({ project }) => {
 
   const { showSnackbar } = useContext(ZUISnackbarContext);
 
-  const patchCampaignMutation = useMutation(
+  const patchProjectMutation = useMutation(
     patchProject(orgId as string, project.id)
   );
 
-  const handleEditCampaignTitle = (newTitle: string) => {
-    patchCampaignMutation.mutate(
+  const handleEditProjectTitle = (newTitle: string) => {
+    patchProjectMutation.mutate(
       { title: newTitle },
       {
         onError: () =>
@@ -44,7 +44,7 @@ const EditableProjectTitle: FC<EditableProjectTitleProps> = ({ project }) => {
       <ZUIEditTextinPlace
         key={project.id}
         onChange={(newTitle) => {
-          handleEditCampaignTitle(newTitle);
+          handleEditProjectTitle(newTitle);
         }}
         value={project?.title}
       />

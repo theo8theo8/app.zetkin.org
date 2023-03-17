@@ -3,49 +3,49 @@ import { FunctionComponent } from 'react';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 
-import EditableProjectTitle from '../components/EditableCampaignTitle';
-import getCampaign from 'features/projects/fetching/getCampaign';
-import getCampaignEvents from '../fetching/getCampaignEvents';
-import ProjectActionButtons from 'features/projects/components/CampaignActionButtons';
+import EditableProjectTitle from '../components/EditableProjectTitle';
+import getProject from 'features/projects/fetching/getProject';
+import getProjectEvents from '../fetching/getProjectEvents';
+import ProjectActionButtons from 'features/projects/components/ProjectActionButtons';
 import TabbedLayout from '../../../utils/layout/TabbedLayout';
 import { getFirstAndLastEvent, removeOffset } from 'utils/dateUtils';
 import { Msg, useMessages } from 'core/i18n';
 
 import messageIds from '../l10n/messageIds';
 
-interface SingleCampaignLayoutProps {
+interface SingleProjectLayoutProps {
   children: React.ReactNode;
   fixedHeight?: boolean;
 }
 
-const SingleCampaignLayout: FunctionComponent<SingleCampaignLayoutProps> = ({
+const SingleProjectLayout: FunctionComponent<SingleProjectLayoutProps> = ({
   children,
   fixedHeight,
 }) => {
   const messages = useMessages(messageIds);
-  const { campId, orgId } = useRouter().query;
-  const campaignQuery = useQuery(
-    ['campaign', orgId, campId],
-    getCampaign(orgId as string, campId as string)
+  const { projectId, orgId } = useRouter().query;
+  const projectQuery = useQuery(
+    ['project', orgId, projectId],
+    getProject(orgId as string, projectId as string)
   );
-  const campaignEventsQuery = useQuery(
-    ['campaignEvents', orgId, campId],
-    getCampaignEvents(orgId as string, campId as string)
+  const projectEventsQuery = useQuery(
+    ['projectEvents', orgId, projectId],
+    getProjectEvents(orgId as string, projectId as string)
   );
 
-  const campaign = campaignQuery.data;
-  const campaignEvents = campaignEventsQuery.data || [];
+  const project = projectQuery.data;
+  const projectEvents = projectEventsQuery.data || [];
 
-  const [firstEvent, lastEvent] = getFirstAndLastEvent(campaignEvents);
+  const [firstEvent, lastEvent] = getFirstAndLastEvent(projectEvents);
 
-  if (!campaign) {
+  if (!project) {
     return null;
   }
 
   return (
     <TabbedLayout
-      actionButtons={<ProjectActionButtons project={campaign} />}
-      baseHref={`/organize/${orgId}/campaigns/${campId}`}
+      actionButtons={<ProjectActionButtons project={project} />}
+      baseHref={`/organize/${orgId}/projects/${projectId}`}
       defaultTab="/"
       fixedHeight={fixedHeight}
       subtitle={
@@ -75,11 +75,11 @@ const SingleCampaignLayout: FunctionComponent<SingleCampaignLayoutProps> = ({
           label: messages.layout.calendar(),
         },
       ]}
-      title={<EditableProjectTitle project={campaign} />}
+      title={<EditableProjectTitle project={project} />}
     >
       {children}
     </TabbedLayout>
   );
 };
 
-export default SingleCampaignLayout;
+export default SingleProjectLayout;

@@ -8,7 +8,7 @@ import { Msg, useMessages } from 'core/i18n';
 
 import messageIds from '../l10n/messageIds';
 
-const ProjectActionButtons: React.FunctionComponent = () => {
+const ProjectsActionButtons: React.FunctionComponent = () => {
   const messages = useMessages(messageIds);
   const router = useRouter();
   const { orgId } = router.query;
@@ -39,4 +39,4 @@ const ProjectActionButtons: React.FunctionComponent = () => {
   );
 };
 
-export default ProjectActionButtons;
+export default ProjectsActionButtons;

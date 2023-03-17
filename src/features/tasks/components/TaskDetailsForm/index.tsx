@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import validator from 'validator';
 import { DateTimePicker, TextField } from 'mui-rff';
 
-import getCampaigns from 'features/projects/fetching/getCampaigns';
+import getProjects from 'features/projects/fetching/getProjects';
 import { ZetkinTask } from 'utils/types/zetkin';
 import {
   AnyTaskTypeConfig,
@@ -53,7 +53,7 @@ const TaskDetailsForm = ({
   const { campId, orgId } = router.query as { campId: string; orgId: string };
   const { data: campaigns } = useQuery(
     ['campaigns', orgId],
-    getCampaigns(orgId)
+    getProjects(orgId)
   );
   const taskStatus = task ? getTaskStatus(task) : null;
 

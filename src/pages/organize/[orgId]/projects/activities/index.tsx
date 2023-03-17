@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { Box, Link, Typography } from '@mui/material';
 
 import ActivityList from 'features/projects/components/ActivityList';
-import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
+import AllProjectsLayout from 'features/projects/layout/AllCampaignsLayout';
 import messageIds from 'features/projects/l10n/messageIds';
 import { Msg } from 'core/i18n';
 import { PageWithLayout } from 'utils/types';
@@ -80,7 +80,7 @@ const CampaignActivitiesPage: PageWithLayout<CampaignActivitiesPageProps> = ({
 };
 
 CampaignActivitiesPage.getLayout = function getLayout(page) {
-  return <AllCampaignsLayout>{page}</AllCampaignsLayout>;
+  return <AllProjectsLayout>{page}</AllProjectsLayout>;
 };
 
 export default CampaignActivitiesPage;

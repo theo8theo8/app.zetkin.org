@@ -5,12 +5,12 @@ import { Box, Grid, Typography } from '@mui/material';
 
 import { campaignTasksResource } from 'features/tasks/api/tasks';
 import EventList from 'features/events/components/EventList';
-import getCampaign from 'features/projects/fetching/getCampaign';
-import getCampaignEvents from 'features/projects/fetching/getCampaignEvents';
 import getOrg from 'utils/fetching/getOrg';
+import getProject from 'features/projects/fetching/getProject';
+import getProjectEvents from 'features/projects/fetching/getProjectEvents';
 import { PageWithLayout } from 'utils/types';
 import { scaffold } from 'utils/next';
-import SingleCampaignLayout from 'features/projects/layout/SingleCampaignLayout';
+import SingleProjectLayout from 'features/projects/layout/SingleCampaignLayout';
 import TaskList from 'features/tasks/components/TaskList';
 import { useMessages } from 'core/i18n';
 import ZUIPerson from 'zui/ZUIPerson';
@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = scaffold(async (ctx) => {
 
   await ctx.queryClient.prefetchQuery(
     ['campaignEvents', orgId, campId],
-    getCampaignEvents(orgId as string, campId as string, ctx.apiFetch)
+    getProjectEvents(orgId as string, campId as string, ctx.apiFetch)
   );
   const campaignEventsState = ctx.queryClient.getQueryState([
     'campaignEvents',
@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = scaffold(async (ctx) => {
 
   await ctx.queryClient.prefetchQuery(
     ['campaign', orgId, campId],
-    getCampaign(orgId as string, campId as string, ctx.apiFetch)
+    getProject(orgId as string, campId as string, ctx.apiFetch)
   );
   const campaignState = ctx.queryClient.getQueryState([
     'campaign',
@@ -94,11 +94,11 @@ const CampaignSummaryPage: PageWithLayout<CampaignCalendarPageProps> = ({
 
   const eventsQuery = useQuery(
     ['campaignEvents', orgId, campId],
-    getCampaignEvents(orgId, campId)
+    getProjectEvents(orgId, campId)
   );
   const campaignQuery = useQuery(
     ['campaign', orgId, campId],
-    getCampaign(orgId, campId)
+    getProject(orgId, campId)
   );
   const events = eventsQuery.data || [];
   const tasks = tasksQuery.data || [];
@@ -156,7 +156,7 @@ const CampaignSummaryPage: PageWithLayout<CampaignCalendarPageProps> = ({
 };
 
 CampaignSummaryPage.getLayout = function getLayout(page) {
-  return <SingleCampaignLayout>{page}</SingleCampaignLayout>;
+  return <SingleProjectLayout>{page}</SingleProjectLayout>;
 };
 
 export default CampaignSummaryPage;

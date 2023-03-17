@@ -11,19 +11,19 @@ import ReferendumSignatureCollection from '..';
  * - No publish date, no expires and no deadline
  */
 const VisitReferendumWebsite: ZetkinTask<VisitLinkConfig> = {
-  campaign: {
-    id: ReferendumSignatureCollection.id,
-    title: ReferendumSignatureCollection.title,
-  },
   config: {
     url: 'https://meingrundeinkommen.de',
   },
   cover_file: null,
   id: 2,
   instructions: `
-    Visit this website to learn more about the referendum
-    `,
+  Visit this website to learn more about the referendum
+  `,
   organization: KPD,
+  project: {
+    id: ReferendumSignatureCollection.id,
+    title: ReferendumSignatureCollection.title,
+  },
   reassign_interval: null,
   reassign_limit: null,
   target: {
