@@ -5,11 +5,11 @@ import SurveyListItem from './SurveyListItem';
 import TaskListItem from './TaskListItem';
 import {
   ACTIVITIES,
-  CampaignAcitivity,
+  ProjectAcitivity,
 } from 'features/projects/models/CampaignAcitivitiesModel';
 
 interface ActivityListProps {
-  activities: CampaignAcitivity[];
+  activities: ProjectAcitivity[];
   orgId: number;
 }
 

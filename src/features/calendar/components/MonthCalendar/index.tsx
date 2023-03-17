@@ -9,13 +9,13 @@ import MonthCalendarEvent from './MonthCalendarEvent';
 import MonthCalendarTask from './MonthCalendarTask';
 import { Msg } from 'core/i18n';
 import { CALENDAR_RANGES, getViewRange } from '../utils';
-import { ZetkinCampaign, ZetkinEvent, ZetkinTask } from 'utils/types/zetkin';
+import { ZetkinEvent, ZetkinProject, ZetkinTask } from 'utils/types/zetkin';
 
 import messageIds from 'features/calendar/l10n/messageIds';
 
 interface MonthCalendarProps {
   baseHref: string;
-  campaigns: ZetkinCampaign[];
+  campaigns: ZetkinProject[];
   events: ZetkinEvent[];
   focusDate: Date;
   orgId: string;
@@ -128,7 +128,7 @@ const MonthCalendar = ({
       <Box display="flex" mr={0.5}>
         {campaigns.map((c) => {
           const campaignEvents = events
-            .filter((e) => e.campaign.id === c.id)
+            .filter((e) => e.project.id === c.id)
             .sort((a, b) => {
               return (
                 new Date(a.start_time).getTime() -
@@ -198,7 +198,7 @@ const MonthCalendar = ({
               >
                 {tasksAndEvents.map((item, i) => {
                   const campaign = campaigns.find(
-                    (c) => c.id === item.data.campaign.id
+                    (c) => c.id === item.data.project.id
                   );
                   return (
                     <React.Fragment key={i}>
@@ -246,7 +246,7 @@ const MonthCalendar = ({
                       >
                         {tasksAndEvents.map((item, i) => {
                           const campaign = campaigns.find(
-                            (c) => c.id === item.data.campaign.id
+                            (c) => c.id === item.data.project.id
                           );
                           return (
                             <React.Fragment key={i}>
@@ -303,7 +303,7 @@ const MonthCalendar = ({
 export default MonthCalendar;
 
 interface CalendarBarProps {
-  campaign: ZetkinCampaign;
+  campaign: ZetkinProject;
   month: number;
   events: ZetkinEvent[];
   firstCalendarDay: Date;

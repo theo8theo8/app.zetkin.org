@@ -1,6 +1,6 @@
 import KPD from '../..';
 import RosaLuxemburg from '../../people/RosaLuxemburg';
-import { ZetkinCampaign } from 'utils/types/zetkin';
+import { ZetkinProject } from 'utils/types/zetkin';
 
 /**
  * A base campaign
@@ -9,7 +9,7 @@ import { ZetkinCampaign } from 'utils/types/zetkin';
  * - Public
  * - Published
  */
-const WelcomeNewMembers: ZetkinCampaign = {
+const WelcomeNewMembers: ZetkinProject = {
   color: '',
   id: 2,
   info_text: `Welcome new members to the KPD to make sure they are aware of the org

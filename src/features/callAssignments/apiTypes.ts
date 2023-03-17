@@ -9,7 +9,6 @@ export interface CallAssignmentCaller {
 }
 
 export interface CallAssignmentData {
-  campaign: { id: number; title: string } | null;
   cooldown: number;
   disable_caller_notes: boolean;
   end_date: string | null;
@@ -17,6 +16,7 @@ export interface CallAssignmentData {
   goal: ZetkinQuery;
   id: number;
   instructions: string;
+  project: { id: number; title: string } | null;
   start_date: string | null;
   target: ZetkinQuery;
   title: string;

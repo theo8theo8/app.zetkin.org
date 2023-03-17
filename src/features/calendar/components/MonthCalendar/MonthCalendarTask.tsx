@@ -4,14 +4,14 @@ import NextLink from 'next/link';
 import { Box, Link, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 
-import { ZetkinCampaign, ZetkinTask } from 'utils/types/zetkin';
+import { ZetkinProject, ZetkinTask } from 'utils/types/zetkin';
 
 const DEFAULT_COLOR = grey[900];
 
 interface MonthCalendarTaskProps {
   baseHref: string;
   isVisible: boolean;
-  campaign?: ZetkinCampaign;
+  campaign?: ZetkinProject;
   task: ZetkinTask;
   onLoad?: (listItemHeight: number) => void;
 }

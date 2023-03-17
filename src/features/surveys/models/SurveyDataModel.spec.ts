@@ -48,11 +48,11 @@ describe('SurveyDataModel', () => {
             access: 'open',
             allow_anonymous: true,
             callers_only: false,
-            campaign: null,
             elements: [],
             expires: expires,
             id: 1,
             info_text: 'Semla',
+            project: null,
             org_access: 'sameorg',
             organization: {
               id: 1,

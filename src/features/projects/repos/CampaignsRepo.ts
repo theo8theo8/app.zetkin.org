@@ -3,7 +3,7 @@ import { Store } from '@reduxjs/toolkit';
 import Environment from 'core/env/Environment';
 import IApiClient from 'core/api/client/IApiClient';
 import { campaignCreate, campaignCreated } from '../store';
-import { ZetkinCampaign, ZetkinCampaignPostBody } from 'utils/types/zetkin';
+import { ZetkinProject, ZetkinProjectPostBody } from 'utils/types/zetkin';
 
 export default class CampaignsRepo {
   private _apiClient: IApiClient;
@@ -14,17 +14,17 @@ export default class CampaignsRepo {
     this._store = env.store;
   }
 
-  async createCampaign(
-    campaignBody: ZetkinCampaignPostBody,
+  async createProject(
+    projectBody: ZetkinProjectPostBody,
     orgId: number
-  ): Promise<ZetkinCampaign> {
+  ): Promise<ZetkinProject> {
     this._store.dispatch(campaignCreate());
-    const campaign = await this._apiClient.post<
-      ZetkinCampaign,
-      ZetkinCampaignPostBody
-    >(`/api/orgs/${orgId}/campaigns`, campaignBody);
+    const project = await this._apiClient.post<
+      ZetkinProject,
+      ZetkinProjectPostBody
+    >(`/api/orgs/${orgId}/campaigns`, projectBody);
 
-    this._store.dispatch(campaignCreated(campaign));
-    return campaign;
+    this._store.dispatch(campaignCreated(project));
+    return project;
   }
 }

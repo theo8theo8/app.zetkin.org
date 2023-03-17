@@ -18,14 +18,14 @@ import { useFocusDate } from 'utils/hooks/useFocusDate';
 import WeekCalendar from './WeekCalendar';
 import { CALENDAR_RANGES, getViewRange } from './utils';
 import { Msg, useMessages } from 'core/i18n';
-import { ZetkinCampaign, ZetkinEvent, ZetkinTask } from 'utils/types/zetkin';
+import { ZetkinEvent, ZetkinProject, ZetkinTask } from 'utils/types/zetkin';
 
 import messageIds from '../l10n/messageIds';
 
 interface ZetkinCalendarProps {
   baseHref: string;
   events: ZetkinEvent[];
-  campaigns: ZetkinCampaign[];
+  campaigns: ZetkinProject[];
   tasks: ZetkinTask[];
 }
 

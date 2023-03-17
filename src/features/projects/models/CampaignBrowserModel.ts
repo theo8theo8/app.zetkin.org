@@ -2,9 +2,9 @@ import CampaignsRepo from '../repos/CampaignsRepo';
 import Environment from 'core/env/Environment';
 import { ModelBase } from 'core/models';
 import { IFuture, PromiseFuture } from 'core/caching/futures';
-import { ZetkinCampaign, ZetkinCampaignPostBody } from 'utils/types/zetkin';
+import { ZetkinProject, ZetkinProjectPostBody } from 'utils/types/zetkin';
 
-export default class CampaignBrowserModel extends ModelBase {
+export default class ProjectBrowserModel extends ModelBase {
   private _env: Environment;
   private _orgId: number;
   private _repo: CampaignsRepo;
@@ -16,16 +16,14 @@ export default class CampaignBrowserModel extends ModelBase {
     this._repo = new CampaignsRepo(this._env);
   }
 
-  createCampaign(
-    campaignBody: ZetkinCampaignPostBody
-  ): IFuture<ZetkinCampaign> {
+  createProject(projectBody: ZetkinProjectPostBody): IFuture<ZetkinProject> {
     const promise = this._repo
-      .createCampaign(campaignBody, this._orgId)
-      .then((campaign: ZetkinCampaign) => {
+      .createProject(projectBody, this._orgId)
+      .then((project: ZetkinProject) => {
         this._env.router.push(
-          `/organize/${campaign.organization?.id}/campaigns/${campaign.id}`
+          `/organize/${project.organization?.id}/projects/${project.id}`
         );
-        return campaign;
+        return project;
       });
     return new PromiseFuture(promise);
   }

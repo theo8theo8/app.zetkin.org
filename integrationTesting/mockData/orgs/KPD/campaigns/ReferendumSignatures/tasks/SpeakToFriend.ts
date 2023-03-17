@@ -11,19 +11,19 @@ import ReferendumSignatureCollection from '..';
  * - No publish date, no expires and no deadline
  */
 const SpeakToFriendAboutReferendum: ZetkinTask = {
-  campaign: {
-    id: ReferendumSignatureCollection.id,
-    title: ReferendumSignatureCollection.title,
-  },
   config: {},
   cover_file: null,
   id: 1,
   instructions: `
-    Talk to a friend about the referendum. 
-    Tell them about how if we vote YES, then we will have public control of housing,
-    reducing homelessness.
-    `,
+  Talk to a friend about the referendum. 
+  Tell them about how if we vote YES, then we will have public control of housing,
+  reducing homelessness.
+  `,
   organization: KPD,
+  project: {
+    id: ReferendumSignatureCollection.id,
+    title: ReferendumSignatureCollection.title,
+  },
   reassign_interval: null,
   reassign_limit: null,
   target: {

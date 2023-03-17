@@ -1,5 +1,5 @@
 import KPD from '../..';
-import { ZetkinCampaign } from 'utils/types/zetkin';
+import { ZetkinProject } from 'utils/types/zetkin';
 
 /**
  * A base campaign
@@ -8,7 +8,7 @@ import { ZetkinCampaign } from 'utils/types/zetkin';
  * - Private
  * - Published
  */
-const ReferendumSignatureCollection: ZetkinCampaign = {
+const ReferendumSignatureCollection: ZetkinProject = {
   color: '',
   id: 1,
   info_text: `20,000 signatures are needed to put the motion to expropriate mega landlords the people of Berlin.`,

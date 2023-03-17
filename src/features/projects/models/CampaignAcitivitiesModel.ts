@@ -14,12 +14,12 @@ export enum ACTIVITIES {
   TASK = 'task',
 }
 
-export type CampaignAcitivity =
+export type ProjectAcitivity =
   | (ZetkinSurveyExtended & { kind: ACTIVITIES.SURVEY })
   | (CallAssignmentData & { kind: ACTIVITIES.CALL_ASSIGNMENT })
   | (ZetkinTask & { kind: ACTIVITIES.TASK });
 
-export default class CampaignActivitiesModel extends ModelBase {
+export default class ProjectActivitiesModel extends ModelBase {
   private _callAssignmentsRepo: CallAssignmentsRepo;
   private _orgId: number;
   private _surveysRepo: SurveysRepo;
@@ -33,7 +33,7 @@ export default class CampaignActivitiesModel extends ModelBase {
     this._tasksRepo = new TasksRepo(env);
   }
 
-  getCurrentActivities(): IFuture<CampaignAcitivity[]> {
+  getCurrentActivities(): IFuture<ProjectAcitivity[]> {
     const callAssignmentsFuture = this._callAssignmentsRepo.getCallAssignments(
       this._orgId
     );
@@ -48,21 +48,21 @@ export default class CampaignActivitiesModel extends ModelBase {
       return new LoadingFuture();
     }
 
-    const callAssignments: CampaignAcitivity[] = callAssignmentsFuture.data
+    const callAssignments: ProjectAcitivity[] = callAssignmentsFuture.data
       .filter((ca) => !ca.end_date || isInFuture(ca.end_date))
       .map((ca) => ({
         ...ca,
         kind: ACTIVITIES.CALL_ASSIGNMENT,
       }));
 
-    const surveys: CampaignAcitivity[] = surveysFuture.data
+    const surveys: ProjectAcitivity[] = surveysFuture.data
       .filter((survey) => !survey.expires || isInFuture(survey.expires))
       .map((survey) => ({
         ...survey,
         kind: ACTIVITIES.SURVEY,
       }));
 
-    const tasks: CampaignAcitivity[] = tasksFuture.data
+    const tasks: ProjectAcitivity[] = tasksFuture.data
       .filter((task) => !task.expires || isInFuture(task.expires))
       .map((task) => ({
         ...task,
@@ -88,7 +88,7 @@ export default class CampaignActivitiesModel extends ModelBase {
   }
 }
 
-function getStartDate(activity: CampaignAcitivity): Date | null {
+function getStartDate(activity: ProjectAcitivity): Date | null {
   if (activity.kind === ACTIVITIES.SURVEY) {
     if (!activity.published) {
       return null;

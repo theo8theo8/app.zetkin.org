@@ -5,10 +5,10 @@ import { Box, Link, Typography } from '@mui/material';
 
 import ActivityList from 'features/projects/components/ActivityList';
 import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
-import CampaignActivitiesModel from 'features/projects/models/CampaignAcitivitiesModel';
 import messageIds from 'features/projects/l10n/messageIds';
 import { Msg } from 'core/i18n';
 import { PageWithLayout } from 'utils/types';
+import ProjectActivitiesModel from 'features/projects/models/CampaignAcitivitiesModel';
 import { scaffold } from 'utils/next';
 import useModel from 'core/useModel';
 import useServerSide from 'core/useServerSide';
@@ -38,11 +38,11 @@ const CampaignActivitiesPage: PageWithLayout<CampaignActivitiesPageProps> = ({
 }) => {
   const onServer = useServerSide();
   const model = useModel(
-    (env) => new CampaignActivitiesModel(env, parseInt(orgId))
+    (env) => new ProjectActivitiesModel(env, parseInt(orgId))
   );
   const activities = model
     .getCurrentActivities()
-    .data?.filter((activity) => activity.campaign === null);
+    .data?.filter((activity) => activity.project === null);
 
   if (onServer) {
     return null;

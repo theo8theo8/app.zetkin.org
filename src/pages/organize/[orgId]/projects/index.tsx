@@ -5,12 +5,12 @@ import Head from 'next/head';
 import { useQuery } from 'react-query';
 
 import AllCampaignsLayout from 'features/projects/layout/AllCampaignsLayout';
-import CampaignCard from 'features/projects/components/CampaignCard';
 import getCampaigns from 'features/projects/fetching/getCampaigns';
 import getEvents from 'features/events/fetching/getEvents';
 import getOrg from 'utils/fetching/getOrg';
 import getUpcomingEvents from 'features/events/fetching/getUpcomingEvents';
 import { PageWithLayout } from 'utils/types';
+import ProjectCard from 'features/projects/components/CampaignCard';
 import { scaffold } from 'utils/next';
 import { useMessages } from 'core/i18n';
 import ZUISection from 'zui/ZUISection';
@@ -103,10 +103,10 @@ const AllCampaignsSummaryPage: PageWithLayout<AllCampaignsSummaryPageProps> = ({
         >
           {campaigns.map((campaign) => {
             return (
-              <CampaignCard
+              <ProjectCard
                 key={campaign.id}
-                campaign={campaign}
                 events={events}
+                project={campaign}
               />
             );
           })}

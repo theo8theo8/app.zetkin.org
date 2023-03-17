@@ -3,8 +3,8 @@ import { Flag } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import { useMutation, useQueryClient } from 'react-query';
 
-import CampaignDetailsForm from 'features/projects/components/CampaignDetailsForm';
 import postCampaign from 'features/projects/fetching/postCampaign';
+import ProjectDetailsForm from 'features/projects/components/CampaignDetailsForm';
 
 import { ACTIONS } from '../constants';
 import { Msg } from 'core/i18n';
@@ -41,7 +41,7 @@ const DialogContent: React.FunctionComponent<DialogContentBaseProps> = ({
           <Msg id={messageIds.speedDial.requestError} />
         </Alert>
       )}
-      <CampaignDetailsForm onCancel={closeDialog} onSubmit={handleFormSubmit} />
+      <ProjectDetailsForm onCancel={closeDialog} onSubmit={handleFormSubmit} />
     </>
   );
 };

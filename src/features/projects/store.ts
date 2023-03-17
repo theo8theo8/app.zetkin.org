@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ZetkinCampaign } from 'utils/types/zetkin';
+import { ZetkinProject } from 'utils/types/zetkin';
 import { remoteItem, RemoteList, remoteList } from 'utils/storeUtils';
 
 export interface CampaignsStoreSlice {
-  recentlyCreatedCampaign: ZetkinCampaign | null;
-  campaignList: RemoteList<ZetkinCampaign>;
+  recentlyCreatedCampaign: ZetkinProject | null;
+  campaignList: RemoteList<ZetkinProject>;
 }
 
 const initialState: CampaignsStoreSlice = {
@@ -21,7 +21,7 @@ const campaignsSlice = createSlice({
       state.campaignList.isLoading = true;
       state.recentlyCreatedCampaign = null;
     },
-    campaignCreated: (state, action: PayloadAction<ZetkinCampaign>) => {
+    campaignCreated: (state, action: PayloadAction<ZetkinProject>) => {
       const campaign = action.payload;
       state.campaignList.isLoading = false;
       state.campaignList.items.push(

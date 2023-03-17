@@ -12,30 +12,30 @@ import {
 
 import { Msg } from 'core/i18n';
 import { getFirstAndLastEvent, removeOffset } from 'utils/dateUtils';
-import { ZetkinCampaign, ZetkinEvent } from 'utils/types/zetkin';
+import { ZetkinEvent, ZetkinProject } from 'utils/types/zetkin';
 
 import messageIds from '../l10n/messageIds';
 
-interface CampaignCardProps {
-  campaign: ZetkinCampaign;
+interface ProjectCardProps {
+  project: ZetkinProject;
   events: ZetkinEvent[];
 }
 
-const CampaignCard = ({ campaign, events }: CampaignCardProps): JSX.Element => {
+const ProjectCard = ({ project, events }: ProjectCardProps): JSX.Element => {
   const { orgId } = useRouter().query;
-  const { id, title } = campaign;
+  const { id, title } = project;
 
-  const campaignEvents = events.filter(
-    (event) => event.campaign.id === campaign.id
+  const projectEvents = events.filter(
+    (event) => event.project.id === project.id
   );
-  const numOfUpcomingEvents = campaignEvents.filter((event) =>
+  const numOfUpcomingEvents = projectEvents.filter((event) =>
     dayjs(removeOffset(event.end_time)).isAfter(dayjs())
   ).length;
 
-  const [firstEvent, lastEvent] = getFirstAndLastEvent(campaignEvents);
+  const [firstEvent, lastEvent] = getFirstAndLastEvent(projectEvents);
 
   return (
-    <Card data-testid="campaign-card">
+    <Card data-testid="project-card">
       <CardContent>
         <Typography gutterBottom noWrap variant="h6">
           {title}
@@ -68,7 +68,7 @@ const CampaignCard = ({ campaign, events }: CampaignCardProps): JSX.Element => {
         {/*TODO: labels for calls and surveys*/}
       </CardContent>
       <CardActions>
-        <NextLink href={`/organize/${orgId}/campaigns/${id}`} passHref>
+        <NextLink href={`/organize/${orgId}/projects/${id}`} passHref>
           <Link underline="hover" variant="button">
             <Msg id={messageIds.all.cardCTP} />
           </Link>
@@ -78,4 +78,4 @@ const CampaignCard = ({ campaign, events }: CampaignCardProps): JSX.Element => {
   );
 };
 
-export default CampaignCard;
+export default ProjectCard;

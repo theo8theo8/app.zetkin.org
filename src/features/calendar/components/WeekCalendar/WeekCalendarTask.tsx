@@ -4,13 +4,13 @@ import NextLink from 'next/link';
 import { useState } from 'react';
 import { Box, Link, Typography } from '@mui/material';
 
-import { ZetkinCampaign, ZetkinTask } from 'utils/types/zetkin';
+import { ZetkinProject, ZetkinTask } from 'utils/types/zetkin';
 
 const DEFAULT_COLOR = grey[900];
 
 interface WeekCalendarTaskProps {
   baseHref: string;
-  campaign?: ZetkinCampaign;
+  campaign?: ZetkinProject;
   task: ZetkinTask;
 }
 

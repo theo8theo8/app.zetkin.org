@@ -4,13 +4,13 @@ import { grey } from '@mui/material/colors';
 import NextLink from 'next/link';
 import { Box, Link, Tooltip, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import { ZetkinCampaign, ZetkinEvent } from 'utils/types/zetkin';
+import { ZetkinEvent, ZetkinProject } from 'utils/types/zetkin';
 
 const DEFAULT_COLOR = grey[900];
 
 interface WeekCalendarEventProps {
   baseHref: string;
-  campaign?: ZetkinCampaign;
+  campaign?: ZetkinProject;
   event: ZetkinEvent;
   startOfDay: Date;
   shiftValue: number;

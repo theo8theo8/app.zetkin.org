@@ -12,7 +12,7 @@ import {
   ZetkinViewRow,
 } from '../../features/views/components/types';
 
-export interface ZetkinCampaign {
+export interface ZetkinProject {
   color: string;
   info_text: string;
   title: string;
@@ -26,8 +26,8 @@ export interface ZetkinCampaign {
   published: boolean;
 }
 
-export interface ZetkinCampaignPostBody
-  extends Partial<Omit<ZetkinCampaign, 'organization' | 'manager'>> {
+export interface ZetkinProjectPostBody
+  extends Partial<Omit<ZetkinProject, 'organization' | 'manager'>> {
   title: string;
   manager_id?: number;
 }
@@ -62,10 +62,6 @@ export interface ZetkinEventResponse {
 
 export interface ZetkinEvent {
   activity: { title: string };
-  campaign: {
-    id: number;
-    title: string;
-  };
   contact?: string | null;
   end_time: string;
   id: number;
@@ -74,6 +70,10 @@ export interface ZetkinEvent {
     id: number;
     lat: number;
     lng: number;
+    title: string;
+  };
+  project: {
+    id: number;
     title: string;
   };
   num_participants_required?: number;
@@ -180,7 +180,7 @@ export interface ZetkinSurvey {
   callers_only: boolean;
   published: string | null;
   expires: string | null;
-  campaign: { id: number; title: string } | null;
+  project: { id: number; title: string } | null;
   org_access: 'sameorg' | 'suborgs';
 }
 

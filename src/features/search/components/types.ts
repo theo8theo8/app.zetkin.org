@@ -1,6 +1,6 @@
 import {
-  ZetkinCampaign,
   ZetkinPerson,
+  ZetkinProject,
   ZetkinTask,
   ZetkinView,
 } from 'utils/types/zetkin';
@@ -18,7 +18,7 @@ export interface PersonSearchResult {
 }
 export interface CampaignSearchResult {
   type: SEARCH_DATA_TYPE.CAMPAIGN;
-  match: ZetkinCampaign;
+  match: ZetkinProject;
 }
 export interface TaskSearchResult {
   type: SEARCH_DATA_TYPE.TASK;

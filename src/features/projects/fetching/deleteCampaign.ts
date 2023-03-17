@@ -1,6 +1,6 @@
 import defaultFetch from '../../../utils/fetching/defaultFetch';
 
-const deleteCampaign = (
+const deleteProject = (
   orgId: string | number,
   campaignId: string | number,
   fetch = defaultFetch
@@ -16,4 +16,4 @@ const deleteCampaign = (
   };
 };
 
-export default deleteCampaign;
+export default deleteProject;

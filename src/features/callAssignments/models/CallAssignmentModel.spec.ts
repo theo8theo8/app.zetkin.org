@@ -47,7 +47,6 @@ describe('CallAssignmentModel', () => {
         callAssignments: {
           assignmentList: mockList<CallAssignmentData>([
             {
-              campaign: null,
               cooldown: 3,
               disable_caller_notes: false,
               end_date: null,
@@ -58,6 +57,7 @@ describe('CallAssignmentModel', () => {
               },
               id: 2,
               instructions: 'Be nice when you call people.',
+              project: null,
               start_date: null,
               target: {
                 filter_spec: [],
@@ -83,7 +83,6 @@ describe('CallAssignmentModel', () => {
         callAssignments: {
           assignmentList: mockList<CallAssignmentData>([
             {
-              campaign: null,
               cooldown: 3,
               disable_caller_notes: false,
               end_date: null,
@@ -94,6 +93,7 @@ describe('CallAssignmentModel', () => {
               },
               id: 2,
               instructions: 'Be nice when you call people.',
+              project: null,
               start_date: null,
               target: {
                 filter_spec: [
@@ -129,7 +129,6 @@ describe('CallAssignmentModel', () => {
       callAssignments: {
         assignmentList: mockList<CallAssignmentData>([
           {
-            campaign: null,
             cooldown: 3,
             disable_caller_notes: false,
             end_date: endDate,
@@ -140,6 +139,7 @@ describe('CallAssignmentModel', () => {
             },
             id: 2,
             instructions: 'Be nice when you call people.',
+            project: null,
             start_date: startDate,
             target: {
               filter_spec: [{ config: {}, type: FILTER_TYPE.ALL }],
@@ -278,7 +278,6 @@ describe('CallAssignmentModel', () => {
         callAssignments: {
           assignmentList: mockList<CallAssignmentData>([
             {
-              campaign: null,
               cooldown: 3,
               disable_caller_notes: false,
               end_date: null,
@@ -289,6 +288,7 @@ describe('CallAssignmentModel', () => {
               },
               id: 2,
               instructions: 'Be nice when you call people.',
+              project: null,
               start_date: null,
               target: {
                 filter_spec: [],
@@ -319,7 +319,6 @@ describe('CallAssignmentModel', () => {
         callAssignments: {
           assignmentList: mockList<CallAssignmentData>([
             {
-              campaign: null,
               cooldown: 3,
               disable_caller_notes: false,
               end_date: null,
@@ -330,6 +329,7 @@ describe('CallAssignmentModel', () => {
               },
               id: 2,
               instructions: 'Be nice when you call people.',
+              project: null,
               start_date: null,
               target: {
                 filter_spec: [
@@ -395,7 +395,6 @@ describe('CallAssignmentModel', () => {
         callAssignments: {
           assignmentList: mockList<CallAssignmentData>([
             {
-              campaign: null,
               cooldown: 3,
               disable_caller_notes: false,
               end_date: null,
@@ -406,6 +405,7 @@ describe('CallAssignmentModel', () => {
               },
               id: 2,
               instructions: 'Be nice when you call people.',
+              project: null,
               start_date: null,
               target: {
                 filter_spec: [
@@ -615,7 +615,6 @@ describe('CallAssignmentModel', () => {
       callAssignments: {
         assignmentList: mockList<CallAssignmentData>([
           {
-            campaign: null,
             cooldown: 3,
             disable_caller_notes: false,
             end_date: endDate,
@@ -626,6 +625,7 @@ describe('CallAssignmentModel', () => {
             },
             id: 2,
             instructions: 'Be nice when you call people.',
+            project: null,
             start_date: startDate,
             target: {
               filter_spec: [{ config: {}, type: FILTER_TYPE.ALL }],
@@ -684,7 +684,6 @@ describe('CallAssignmentModel', () => {
       callAssignments: {
         assignmentList: mockList<CallAssignmentData>([
           {
-            campaign: null,
             cooldown: 3,
             disable_caller_notes: false,
             end_date: endDate,
@@ -695,6 +694,7 @@ describe('CallAssignmentModel', () => {
             },
             id: 2,
             instructions: 'Be nice when you call people.',
+            project: null,
             start_date: startDate,
             target: {
               filter_spec: [{ config: {}, type: FILTER_TYPE.ALL }],

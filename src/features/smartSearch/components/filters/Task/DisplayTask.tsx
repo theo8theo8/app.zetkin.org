@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 
-import { campaignResource } from 'features/projects/api/campaigns';
 import DisplayTimeFrame from '../DisplayTimeFrame';
 import { Msg } from 'core/i18n';
+import { projectResource } from 'features/projects/api/projects';
 import { taskResource } from 'features/tasks/api/tasks';
 
 import messageIds from 'features/smartSearch/l10n/messageIds';
@@ -43,7 +43,7 @@ const DisplayTask = ({ filter }: DisplayTaskProps): JSX.Element => {
 
   let campaignTitle;
   if (config.campaign && config.task == undefined) {
-    const campaignQuery = campaignResource(
+    const campaignQuery = projectResource(
       orgId as string,
       config.campaign as unknown as string
     ).useQuery();

@@ -8,21 +8,21 @@ import { Link, MenuItem } from '@mui/material';
 import getUserMemberships from 'utils/fetching/getUserMemberships';
 import ZUISubmitCancelButtons from '../../../zui/ZUISubmitCancelButtons';
 import { Msg, useMessages } from 'core/i18n';
-import { ZetkinCampaign, ZetkinPerson } from 'utils/types/zetkin';
+import { ZetkinPerson, ZetkinProject } from 'utils/types/zetkin';
 
 import messageIds from '../l10n/messageIds';
 
-interface CampaignDetailsFormProps {
-  campaign?: ZetkinCampaign;
+interface ProjectDetailsFormProps {
+  project?: ZetkinProject;
   onSubmit: (data: Record<string, unknown>) => void;
   onCancel: () => void;
 }
 
-const CampaignDetailsForm = ({
+const ProjectDetailsForm = ({
   onSubmit,
   onCancel,
-  campaign,
-}: CampaignDetailsFormProps): JSX.Element => {
+  project,
+}: ProjectDetailsFormProps): JSX.Element => {
   const { orgId } = useRouter().query;
   const messages = useMessages(messageIds);
 
@@ -33,20 +33,20 @@ const CampaignDetailsForm = ({
   const userProfile = activeMembership?.profile;
 
   const [selectedManager, setSelectedManager] = useState<ZetkinPerson | null>(
-    campaign?.manager
+    project?.manager
       ? ({
-          first_name: campaign.manager.name.split(' ')[0],
-          id: campaign.manager.id,
-          last_name: campaign?.manager.name.split(' ')[1],
+          first_name: project.manager.name.split(' ')[0],
+          id: project.manager.id,
+          last_name: project?.manager.name.split(' ')[1],
         } as ZetkinPerson)
       : null
   );
 
   const initialValues = {
-    info_text: campaign?.info_text,
-    status: campaign?.published ? 'published' : 'draft',
-    title: campaign?.title,
-    visibility: campaign?.visibility,
+    info_text: project?.info_text,
+    status: project?.published ? 'published' : 'draft',
+    title: project?.title,
+    visibility: project?.visibility,
   };
 
   const validate = (values: Record<string, string>) => {
@@ -97,7 +97,7 @@ const CampaignDetailsForm = ({
           {/* This is broken due to MUIv5 migration, but will be replaced by new UI
           <ZUIPersonSelect
             label={intl.formatMessage({
-              id: 'misc.formDialog.campaign.manager.label',
+              id: 'misc.formDialog.project.manager.label',
             })}
             name="manager_id"
             onChange={(person) => {
@@ -170,4 +170,4 @@ const CampaignDetailsForm = ({
   );
 };
 
-export default CampaignDetailsForm;
+export default ProjectDetailsForm;

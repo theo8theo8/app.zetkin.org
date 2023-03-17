@@ -8,11 +8,11 @@ import { useEffect, useRef } from 'react';
 
 import WeekCalendarEvent from './WeekCalendarEvent';
 import WeekCalendarTask from './WeekCalendarTask';
-import { ZetkinCampaign, ZetkinEvent, ZetkinTask } from 'utils/types/zetkin';
+import { ZetkinEvent, ZetkinProject, ZetkinTask } from 'utils/types/zetkin';
 
 interface WeekCalendarProps {
   baseHref: string;
-  campaigns: ZetkinCampaign[];
+  campaigns: ZetkinProject[];
   events: ZetkinEvent[];
   focusDate: Date;
   orgId: string;
@@ -156,7 +156,7 @@ const WeekCalendar = ({
         <Box display="flex" flexDirection="column" mb={0.5}>
           {campaigns.map((c) => {
             const campaignEvents = events
-              .filter((e) => e.campaign.id === c.id)
+              .filter((e) => e.project.id === c.id)
               .sort((a, b) => {
                 return (
                   new Date(a.start_time).getTime() -
@@ -200,7 +200,7 @@ const WeekCalendar = ({
               <List disablePadding>
                 {getTasksOnThisDate(startOfDay, endOfDay).map((task) => {
                   const campaign = campaigns.find(
-                    (c) => c.id === task.campaign.id
+                    (c) => c.id === task.project.id
                   );
                   return (
                     <WeekCalendarTask
@@ -286,7 +286,7 @@ const WeekCalendar = ({
                     .map((eventWithShiftValue) => {
                       const [shiftValue, event] = eventWithShiftValue;
                       const campaign = campaigns.find(
-                        (c) => c.id === event.campaign.id
+                        (c) => c.id === event.project.id
                       );
                       return (
                         <WeekCalendarEvent
@@ -313,7 +313,7 @@ export default WeekCalendar;
 
 interface CalendarBarProps {
   orgId: string;
-  campaign: ZetkinCampaign;
+  campaign: ZetkinProject;
   events: ZetkinEvent[];
   firstCalendarDay: Date;
 }

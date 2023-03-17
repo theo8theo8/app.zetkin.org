@@ -3,10 +3,10 @@ import { FunctionComponent } from 'react';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 
-import CampaignActionButtons from 'features/projects/components/CampaignActionButtons';
-import EditableCampaignTitle from '../components/EditableCampaignTitle';
+import EditableProjectTitle from '../components/EditableCampaignTitle';
 import getCampaign from 'features/projects/fetching/getCampaign';
 import getCampaignEvents from '../fetching/getCampaignEvents';
+import ProjectActionButtons from 'features/projects/components/CampaignActionButtons';
 import TabbedLayout from '../../../utils/layout/TabbedLayout';
 import { getFirstAndLastEvent, removeOffset } from 'utils/dateUtils';
 import { Msg, useMessages } from 'core/i18n';
@@ -44,7 +44,7 @@ const SingleCampaignLayout: FunctionComponent<SingleCampaignLayoutProps> = ({
 
   return (
     <TabbedLayout
-      actionButtons={<CampaignActionButtons campaign={campaign} />}
+      actionButtons={<ProjectActionButtons project={campaign} />}
       baseHref={`/organize/${orgId}/campaigns/${campId}`}
       defaultTab="/"
       fixedHeight={fixedHeight}
@@ -75,7 +75,7 @@ const SingleCampaignLayout: FunctionComponent<SingleCampaignLayoutProps> = ({
           label: messages.layout.calendar(),
         },
       ]}
-      title={<EditableCampaignTitle campaign={campaign} />}
+      title={<EditableProjectTitle project={campaign} />}
     >
       {children}
     </TabbedLayout>

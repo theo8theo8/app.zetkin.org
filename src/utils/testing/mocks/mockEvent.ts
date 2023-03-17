@@ -6,10 +6,6 @@ const event: ZetkinEvent = {
   activity: {
     title: 'Active activity',
   },
-  campaign: {
-    id: 1,
-    title: 'Testcampaign Title',
-  },
   contact: null,
   end_time: '2022-06-16T09:00:00+00:00',
   id: 1,
@@ -19,6 +15,10 @@ const event: ZetkinEvent = {
     lat: 51.192702,
     lng: 12.284873,
     title: 'Dorfplatz',
+  },
+  project: {
+    id: 1,
+    title: 'Testcampaign Title',
   },
   num_participants_available: 3,
   num_participants_required: 2,

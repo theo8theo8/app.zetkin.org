@@ -2,7 +2,7 @@ import { FormEvent } from 'react';
 import { MenuItem } from '@mui/material';
 import { useRouter } from 'next/router';
 
-import { campaignsResource } from 'features/projects/api/campaigns';
+import { projectsResource } from 'features/projects/api/projects';
 import { tasksResource } from 'features/tasks/api/tasks';
 
 import FilterForm from '../../FilterForm';
@@ -50,7 +50,7 @@ const Task = ({
   const tasksQuery = tasksResource(orgId as string).useQuery();
   const tasks = tasksQuery?.data || [];
 
-  const campaignsQuery = campaignsResource(orgId as string).useQuery();
+  const campaignsQuery = projectsResource(orgId as string).useQuery();
   const campaigns = campaignsQuery?.data || [];
 
   const { filter, setConfig, setOp } = useSmartSearchFilter<TaskFilterConfig>(

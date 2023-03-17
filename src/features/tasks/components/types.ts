@@ -57,7 +57,7 @@ export interface ZetkinTask<TaskTypeConfig = AnyTaskTypeConfig> {
   reassign_limit: number | null;
   target: ZetkinQuery;
   cover_file: ZetkinFile | null;
-  campaign: {
+  project: {
     id: number;
     title: string;
   };
