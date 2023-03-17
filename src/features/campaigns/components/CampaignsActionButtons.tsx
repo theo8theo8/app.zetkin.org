@@ -19,7 +19,7 @@ const CampaignActionButtons: React.FunctionComponent = () => {
   // Event Handlers
   const handleCreateCampaign = () => {
     const campaign = {
-      title: messages.form.createCampaign.newCampaign(),
+      title: messages.form.createProject.newProject(),
     };
     model.createCampaign(campaign);
   };

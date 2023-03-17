@@ -135,7 +135,7 @@ const QueryOverview = ({
                         }
                       />
                     )}
-                    {filter.type === FILTER_TYPE.CAMPAIGN_PARTICIPATION && (
+                    {filter.type === FILTER_TYPE.PROJECT_PARTICIPATION && (
                       <DisplayCampaignParticipation
                         filter={
                           filter as SmartSearchFilterWithId<CampaignParticipationConfig>

@@ -57,8 +57,7 @@ const CampaignActionButtons: React.FunctionComponent<
   };
   const handleDeleteCampaign = () => {
     deleteCampaignMutation.mutate(undefined, {
-      onError: () =>
-        showSnackbar('error', messages.form.deleteCampaign.error()),
+      onError: () => showSnackbar('error', messages.form.deleteProject.error()),
       onSuccess: () => {
         router.push(`/organize/${orgId as string}/campaigns`);
       },
@@ -96,14 +95,14 @@ const CampaignActionButtons: React.FunctionComponent<
                   <Box mr={1}>
                     <Delete />
                   </Box>
-                  <Msg id={messageIds.form.deleteCampaign.title} />
+                  <Msg id={messageIds.form.deleteProject.title} />
                 </>
               ),
               onSelect: () => {
                 showConfirmDialog({
                   onSubmit: handleDeleteCampaign,
-                  title: messages.form.deleteCampaign.title(),
-                  warningText: messages.form.deleteCampaign.warning(),
+                  title: messages.form.deleteProject.title(),
+                  warningText: messages.form.deleteProject.warning(),
                 });
               },
             },

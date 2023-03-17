@@ -176,7 +176,7 @@ const TaskDetailsForm = ({
             disabled={!!campId}
             fullWidth
             id={TASK_DETAILS_FIELDS.CAMPAIGN_ID}
-            label={messages.form.fields.campaign()}
+            label={messages.form.fields.project()}
             margin="normal"
             name={TASK_DETAILS_FIELDS.CAMPAIGN_ID}
             required

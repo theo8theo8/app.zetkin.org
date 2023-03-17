@@ -3,7 +3,7 @@ import { TASK_TYPE } from 'features/tasks/components/types';
 export enum FILTER_TYPE {
   ALL = 'all',
   CALL_HISTORY = 'call_history',
-  CAMPAIGN_PARTICIPATION = 'campaign_participation',
+  PROJECT_PARTICIPATION = 'project_participation',
   MOST_ACTIVE = 'most_active',
   PERSON_DATA = 'person_data',
   PERSON_FIELD = 'person_field',

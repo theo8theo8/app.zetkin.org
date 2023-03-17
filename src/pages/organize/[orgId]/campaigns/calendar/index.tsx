@@ -94,7 +94,7 @@ const AllCampaignsCalendarPage: PageWithLayout<
         events={events}
         tasks={tasks}
       />
-      <ZUISpeedDial actions={[ACTIONS.CREATE_CAMPAIGN]} />
+      <ZUISpeedDial actions={[ACTIONS.CREATE_PROJECT]} />
     </>
   );
 };

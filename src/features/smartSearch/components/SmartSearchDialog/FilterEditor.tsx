@@ -42,7 +42,7 @@ const FilterEditor = ({
           onSubmit={onSubmitFilter}
         />
       )}
-      {filter.type === FILTER_TYPE.CAMPAIGN_PARTICIPATION && (
+      {filter.type === FILTER_TYPE.PROJECT_PARTICIPATION && (
         <CampaignParticipation
           filter={filter}
           onCancel={onCancelSubmitFilter}

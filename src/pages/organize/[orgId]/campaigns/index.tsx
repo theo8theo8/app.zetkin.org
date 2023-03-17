@@ -93,7 +93,7 @@ const AllCampaignsSummaryPage: PageWithLayout<AllCampaignsSummaryPageProps> = ({
   return (
     <>
       <Head>
-        <title>{messages.layout.allCampaigns()}</title>
+        <title>{messages.layout.allProjects()}</title>
       </Head>
       <ZUISection title={messages.all.heading()}>
         <Box

@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof ZUISpeedDial> = (args) => (
 
 export const basic = Template.bind({});
 basic.args = {
-  actions: [ACTIONS.CREATE_CAMPAIGN, ACTIONS.CREATE_EVENT, ACTIONS.CREATE_TASK],
+  actions: [ACTIONS.CREATE_PROJECT, ACTIONS.CREATE_EVENT, ACTIONS.CREATE_TASK],
 };

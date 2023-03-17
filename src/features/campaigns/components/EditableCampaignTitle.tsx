@@ -33,10 +33,10 @@ const EditableCampaignTitle: FC<EditableCampaignTitleProps> = ({
       { title: newTitle },
       {
         onError: () =>
-          showSnackbar('error', messages.form.editCampaignTitle.error()),
+          showSnackbar('error', messages.form.editProjectTitle.error()),
         onSettled: () => queryClient.invalidateQueries(['campaign']),
         onSuccess: () =>
-          showSnackbar('success', messages.form.editCampaignTitle.success()),
+          showSnackbar('success', messages.form.editProjectTitle.success()),
       }
     );
   };

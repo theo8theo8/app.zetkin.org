@@ -123,7 +123,7 @@ const CampaignSummaryPage: PageWithLayout<CampaignCalendarPageProps> = ({
                   <ZUIPerson
                     id={campaign.manager.id}
                     name={campaign.manager.name}
-                    subtitle={messages.campaignManager()}
+                    subtitle={messages.projectManager()}
                   />
                 </ZUIPersonHoverCard>
               </Grid>

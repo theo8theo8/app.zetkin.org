@@ -1,6 +1,6 @@
 import { m, makeMessages } from 'core/i18n';
 
-export default makeMessages('feat.campaigns', {
+export default makeMessages('feat.projects', {
   activityList: {
     linkToSummary: m('Go to my active projects.'),
     noActivities: m(
@@ -8,8 +8,8 @@ export default makeMessages('feat.campaigns', {
     ),
   },
   all: {
-    cardCTA: m('Go to campaign'),
-    create: m('Create new campaign'),
+    cardCTP: m('Go to project'),
+    create: m('Create new project'),
     filter: {
       calls: m('Call assignments'),
       canvasses: m('Canvass assignments'),
@@ -17,14 +17,13 @@ export default makeMessages('feat.campaigns', {
       standalones: m('Standalone events'),
       surveys: m('Surveys'),
     },
-    heading: m('Current campaigns'),
+    heading: m('Current projects'),
     indefinite: m('Indefinite'),
     unsorted: m('Unsorted projects'),
     upcoming: m<{ numEvents: number }>('{numEvents, number} upcoming events.'),
   },
   assigneeActions: m('Assignee actions'),
   calendarView: m('See all in calendar'),
-  campaignManager: m('Campaign Manager'),
   events: m('Events'),
   feedback: {
     copy: m(
@@ -34,28 +33,28 @@ export default makeMessages('feat.campaigns', {
     heading: m('Feedback and Surveys (none configured)'),
   },
   form: {
-    createCampaign: {
-      create: m('Create campaign'),
-      error: m('There was an error creating the campaign'),
-      newCampaign: m('My campaign'),
+    createProject: {
+      create: m('Create project'),
+      error: m('There was an error creating the project'),
+      newProject: m('My project'),
     },
-    deleteCampaign: {
+    deleteProject: {
       cancel: m('Cancel'),
-      error: m('There was an error deleting the campaign'),
+      error: m('There was an error deleting the project'),
       submitButton: m('Confirm deletion'),
-      title: m('Delete campaign'),
+      title: m('Delete project'),
       warning: m(
-        'Are you sure you want to delete this campiagn? This action is permanent.'
+        'Are you sure you want to delete this project? This action is permanent.'
       ),
     },
     description: m('Description'),
-    edit: m('Edit campaign'),
-    editCampaignTitle: {
-      error: m('Error updating campaign title'),
-      success: m('Campaign title updated'),
+    edit: m('Edit project'),
+    editProjectTitle: {
+      error: m('Error updating project title'),
+      success: m('Project title updated'),
     },
     manager: {
-      label: m('Campaign manager'),
+      label: m('Project manager'),
       selectSelf: m('Set yourself as manager'),
     },
     name: m('Name'),
@@ -75,7 +74,7 @@ export default makeMessages('feat.campaigns', {
   indefinite: m('Indefinite timeline'),
   layout: {
     activities: m('Activities'),
-    allCampaigns: m('All Campaigns'),
+    allProjects: m('All Projects'),
     archive: m('Archive'),
     calendar: m('Calendar'),
     insights: m('Insights'),
@@ -92,7 +91,8 @@ export default makeMessages('feat.campaigns', {
     create: m('Create call assignment'),
     heading: m('Mobilization and outreach (none configured)'),
   },
-  noManager: m('No Campaign Manager'),
+  noManager: m('No Project Manager'),
+  projectManager: m('Project Manager'),
   taskLayout: {
     tabs: {
       assignees: m('Assignees'),

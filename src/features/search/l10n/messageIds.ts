@@ -6,9 +6,9 @@ export default makeMessages('feat.search', {
   noResults: m('No results'),
   placeholder: m('Type to search'),
   results: {
-    campaign: m('Campaign'),
     people: m('People'),
     person: m('Person'),
+    project: m('Project'),
     task: m('Task'),
     view: m('View'),
   },

@@ -12,21 +12,21 @@ export default makeMessages('feat.smartSearch', {
     save: m('Save'),
   },
   filterCategories: {
-    campaignActivity: m('Campaign activity'),
     misc: m('Misc'),
     peopleDatabase: m('People'),
     phoneBanking: m('Phone banking'),
+    projectActivity: m('Project activity'),
     surveys: m('Surveys'),
   },
   filterTitles: {
     all: m('Everyone'),
     call_history: m('Based on their call history'),
-    campaign_participation: m('Based on their campaign participation'),
     most_active: m('The most active people'),
     person_data: m('Based on their name, address or other data'),
     person_field: m('Based on custom fields'),
     person_tags: m('Based on their tags'),
     person_view: m('People from a view'),
+    project_participation: m('Based on their project participation'),
     random: m('A random selection of people'),
     sub_query: m('Based on another Smart Search query'),
     survey_option: m(
@@ -97,15 +97,15 @@ export default makeMessages('feat.smartSearch', {
         signed_up: m('signed up'),
       },
       campaignSelect: {
-        any: m('any campaign'),
+        any: m('any project'),
         campaign: m<{ campaign: string }>('campaign "{campaign}"'),
       },
       examples: {
         one: m(
-          "Add people who have signed up for events in any campaign with any activity at location 'Dorfplatz' at any point in time"
+          "Add people who have signed up for events in any project with any activity at location 'Dorfplatz' at any point in time"
         ),
         two: m(
-          "Remove people who have not been booked for events in any campaign with activity 'Put up posters' at any location before today."
+          "Remove people who have not been booked for events in any project with activity 'Put up posters' at any location before today."
         ),
       },
       haveSelect: {

@@ -48,9 +48,9 @@ const DialogContent: React.FunctionComponent<DialogContentBaseProps> = ({
 
 const config = {
   icon: <Flag />,
-  key: ACTIONS.CREATE_CAMPAIGN,
-  name: 'misc.speedDial.createCampaign',
-  urlKey: 'create-campaign',
+  key: ACTIONS.CREATE_PROJECT,
+  name: 'misc.speedDial.createProject',
+  urlKey: 'create-project',
 } as ActionConfig;
 
 export { config, DialogContent };

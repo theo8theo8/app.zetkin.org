@@ -36,7 +36,7 @@ const AllCampaignsLayout: FunctionComponent<AllCampaignsLayoutProps> = ({
           label: messages.layout.activities(),
         },
       ]}
-      title={messages.layout.allCampaigns()}
+      title={messages.layout.allProjects()}
     >
       {children}
     </TabbedLayout>

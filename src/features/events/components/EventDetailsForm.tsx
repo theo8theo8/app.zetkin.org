@@ -96,7 +96,7 @@ const EventDetailsForm = ({
           disabled={!!campId}
           fullWidth
           id="camp"
-          label={messages.form.campaign()}
+          label={messages.form.project()}
           margin="normal"
           name="campaign_id"
           select

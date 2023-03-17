@@ -78,10 +78,10 @@ export default makeMessages('feat.tasks', {
   },
   form: {
     fields: {
-      campaign: m('Campaign'),
       deadline: m('Completion Deadline'),
       expires: m('Expiration Date'),
       instructions: m('Instructions'),
+      project: m('Project'),
       published: m('Publish Time'),
       reassignInterval: m('Reassign after completion'),
       reassignIntervalOptions: {
